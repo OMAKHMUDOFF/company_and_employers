@@ -39,7 +39,7 @@ class Employer(models.Model):
     def __str__(self) -> str:
         return self.name
 
-    def her_employees(self):
+    def him_employees(self):
         employees = self.employees.all()
         for employee in employees:
             return employee
@@ -48,15 +48,7 @@ class Employer(models.Model):
         if self.salary < 1000:
             return self.salary
         else:
-            salary_count = 0
-            new_salary = ""
-            str_salary = str(self.salary)
-            while 10**salary_count < self.salary:
-                salary_count += 1
-            else:
-                for i in range(salary_count):
-                    new_salary += str(self.salary % 10**i)
-
+            new_salary = f"{self.salary:,}".replace(",", ".")
             return new_salary
 
 

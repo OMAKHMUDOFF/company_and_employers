@@ -16,7 +16,7 @@ class Companies(admin.ModelAdmin):
 
 @admin.register(Employer)
 class Employers(admin.ModelAdmin):
-    list_display = ("name", "received_salary", "company", "position", "her_employees")
+    list_display = ("name", "received_salary", "company", "position", "him_employees")
     search_fields = ("name", "company", "position")
     list_filter = ("created_at",)
     readonly_fields = ("created_at", "updated_at")
